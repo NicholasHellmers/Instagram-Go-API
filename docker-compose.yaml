@@ -1,16 +1,25 @@
 version: '3.9'
 
 services:
-  web:
-    build: .
+  front:
+    build: ./front
     env_file:
       - .env
     ports:
       - 3000:3000
+    volumes:
+      - ./front:/usr/src/app
+    command: npm run dev
+  back:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - 3010:3010
     depends_on:
       - db
     volumes:
-      - .:/usr/src/app
+      - back:/usr/src/app
     command: air cmd.main.go -b 0.0.0.0
   db:
     image: postgres:alpine
@@ -27,3 +36,5 @@ services:
 
 volumes:
   db:
+  back:
+  front:

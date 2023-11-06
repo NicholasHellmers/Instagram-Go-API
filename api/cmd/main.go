@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/NicholasHellmers/Instagram-Go-API/database"
+	"github.com/NicholasHellmers/Instagram-Go-API/api/database"
 	"github.com/gofiber/fiber/v2"
 )
 

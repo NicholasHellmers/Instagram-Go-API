@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/NicholasHellmers/Instagram-Go-API/models"
+	"github.com/NicholasHellmers/Instagram-Go-API/api/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"

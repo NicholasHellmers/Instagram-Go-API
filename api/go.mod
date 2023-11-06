@@ -1,4 +1,4 @@
-module github.com/NicholasHellmers/Instagram-Go-API
+module github.com/NicholasHellmers/Instagram-Go-API/api
 
 go 1.20
 

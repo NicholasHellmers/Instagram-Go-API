@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	"github.com/NicholasHellmers/Instagram-Go-API/database"
-	"github.com/NicholasHellmers/Instagram-Go-API/models"
+	"github.com/NicholasHellmers/Instagram-Go-API/api/database"
+	"github.com/NicholasHellmers/Instagram-Go-API/api/models"
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -26,7 +26,6 @@ func CreateMessage(c *fiber.Ctx) error {
 	database.DB.Db.Create(&fact)
 
 	return c.Status(200).JSON(fact)
-
 }
 
 func GetMessages(c *fiber.Ctx) error {
