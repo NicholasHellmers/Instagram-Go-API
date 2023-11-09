@@ -1,8 +1,8 @@
 version: '3.9'
 
 services:
-  web:
-    build: .
+  api:
+    build: ./api
     env_file:
       - .env
     ports:
@@ -10,8 +10,8 @@ services:
     depends_on:
       - db
     volumes:
-      - .:/usr/src/app
-    command: air cmd.main.go -b 0.0.0.0
+      - api:/usr/src/app
+    command: air cmd/main.go -b 0.0.0.0
   db:
     image: postgres:alpine
     env_file:
@@ -27,3 +27,4 @@ services:
 
 volumes:
   db:
+  api:
