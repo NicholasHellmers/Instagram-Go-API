@@ -2,7 +2,7 @@ import { createResource } from 'solid-js'
 
 export default function App() {
   const fetchMessage = async () => {
-    const res = await fetch(`http://127.0.0.1:3010`)
+    const res = await fetch(`http://localhost:3010/facts`)
     console.log(res)
     return await res.json()
   }

@@ -1,0 +1,12 @@
+# Dockerfile for solid js frontend
+FROM node:latest
+
+WORKDIR /usr/src/app/app
+
+COPY . .
+
+RUN npm install
+
+CMD ["npm", "run", "dev", "--", "--host"]
+
+EXPOSE 3000

@@ -1,12 +1,21 @@
 version: '3.9'
 
 services:
+  app:
+    build: ./app
+    ports:
+      - 3000:3000
+    depends_on:
+      - api
+    volumes:
+      - app:/usr/src/app
+    command: npm run dev -- --host
   api:
     build: ./api
     env_file:
       - .env
     ports:
-      - 3000:3000
+      - 3010:3000
     depends_on:
       - db
     volumes:
@@ -28,3 +37,4 @@ services:
 volumes:
   db:
   api:
+  app:
